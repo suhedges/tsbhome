@@ -1,0 +1,595 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Combined Sections
+</title>
+<style>
+  .reduced-padding {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .unique-disp-page-title {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #3a6f8f;
+    font-family: 'RobotoRegular', sans-serif;
+  }
+  .custom-border {
+    border: 0px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  .custom-border-featured {
+    border: 0px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 20px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Black:wght@900&display=swap');
+  .unique-container-fluid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5px 5px;
+  }
+  .unique-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  .unique-column {
+    padding: 15px;
+    text-align: center;
+    width: 25%;
+    /* Increased width */box-sizing: border-box;
+  }
+  .unique-column a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.25s ease-in-out, border-radius 1.75s ease-in-out;
+  }
+  .unique-column a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* Add rounded corners on hover */}
+  .unique-column a img,.unique-column a span {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    transition: transform 0.25s ease-in-out, border-radius 1.75s ease-in-out;
+  }
+  .unique-column a img,.carousel .product-info img,.carousel .first-carousel-img {
+    transition: transform 1s ease-in-out;
+  }
+  .unique-column a:hover img,.carousel .product-info:hover img,.carousel .first-carousel-img {
+    transform: scale(1.05);
+    /* Adjust the scale value as needed */}
+  .unique-column a span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #053856;
+    font-family: 'Roboto Black', sans-serif;
+  }
+  .unique-column a:hover img,.unique-column a:hover span {
+    border-radius: 10px;
+    /* Ensure content within links also get rounded corners */}
+  .unique-disp-page-title-wrap {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .unique-disp-page-title {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #7FA2B6;
+    /* Change this to your desired color */font-family: 'RobotoRegular', sans-serif;
+  }
+  .unique-disp-page-wrap a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #7FA2B6;
+    border-radius: 5px;
+    text-decoration: underline;
+    transition: box-shadow 0.3s ease-in-out;
+    font-family: 'Roboto Black', sans-serif;
+    font-weight: bold;
+  }
+  .unique-disp-page-wrap {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .unique-disp-page-wrap a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    .unique-column {
+      width: 50%;
+    }
+}
+  @media (max-width: 576px) {
+    .unique-column {
+      width: 100%;
+    }
+}
+  .max-width-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .carousel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  }
+  .carousel img {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    transform: scale(1.1);
+    transition: transform 0.25s, border-radius 1.75s, box-shadow 0.1s;
+  }
+  .carousel .slide {
+    min-width: 20%;
+    transition: transform 0.4s ease-in-out;
+  }
+  .carousel .left-arrow, .carousel .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .carousel .left-arrow:hover, .carousel .right-arrow:hover {
+    transform: translateY(-50%) scale(1.75);
+  }
+  .carousel .left-arrow {
+    left: 0;
+  }
+  .carousel .right-arrow {
+    right: 0;
+  }
+  .product-info {
+    text-align: left;
+    margin-top: 20px;
+  }
+  .product-info img {
+    height: 220px;
+    margin-bottom: 10px;
+  }
+  .carousel .product-info {
+    display: block;
+    padding: 10px;
+    transition: box-shadow 0.1s, border-radius 1.75s;
+  }
+  .carousel .product-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+  .carousel .product-info p {
+    margin: 10px 0 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .carousel .first-carousel-img {
+    transition: transform .3s ease-in-out, border-radius 1.75s ease-in-out;
+    border-radius: 5px;
+  }
+  /* First Carousel Hover Effect */.carousel .first-carousel-img:hover {
+    transform: scale(1.20);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  /* Second Carousel Hover Effect */.carousel .second-carousel-img {
+    transition: none;
+    /* Remove default hover effect */}
+  .product-container {
+    transition: box-shadow 0.1s ease-in-out, border-radius 1.7s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+    /* Initial border radius */}
+  .product-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    /* Adjust the border radius value as needed */}
+</style>
+<div class="container-fluid gm-editing ui-sortable reduced-padding" style="position: relative; left: 0px; top: 0px;">
+  <div class="row reduced-padding">
+    <div class="column col-sm-12 col-xs-12 col-md-12">
+      <!--gm-editable-region-->
+      <p>
+        <span contenteditable="false" style="border: none;" data-mce-object="iframe" class="mce-preview-object mce-object-iframe" data-mce-p-src="https://suhedges.github.io/carousel1/">
+          <iframe src="https://suhedges.github.io/carousel1/" width="100%" height="500px" frameborder="0">
+          </iframe>
+          <span class="mce-shim">
+          </span>
+        </span>
+      </p>
+      <!--/gm-editable-region-->
+    </div>
+  </div>
+</div>
+<div class="container gm-editing ui-sortable custom-border" style="position: relative; left: 0px; top: 0px;">
+  <div class="row">
+    <div class="column col-md-12 col-sm-12 col-xs-12">
+      <!--gm-editable-region-->
+      <p style="text-align: center;" data-mce-style="text-align: center;">
+        <span style="font-size: 24pt; color: rgb(127, 162, 182);" data-mce-style="font-size: 24pt; color: #7fa2b6;">
+          <strong>
+            <span style="font-family: RobotoRegular;" data-mce-style="font-family: RobotoRegular;">
+              <a href="https://www.tristate-bearing.com/products" target="_blank" title="CATALOG" rel="noopener noreferrer" data-mce-href="products" style="color: rgb(127, 162, 182);" data-mce-style="color: #7fa2b6;">
+                CATALOG OF PRODUCTS
+              </a>
+            </span>
+          </strong>
+        </span>
+      </p>
+      <!--/gm-editable-region-->
+    </div>
+  </div>
+  <div class="row">
+    <div class="column col-md-12 col-sm-12 col-xs-12">
+      <!--gm-editable-region-->
+      <div class="unique-row">
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/bearings">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/bearings_cat_kjfb8_8vhdw.jpg" alt="Bearings" class="unique-img-responsive img-responsive">
+              <span>
+                BEARINGS
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/belt,-sheaves-&amp;-pulleys">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/belts_sheaves_pulleys_image_dsfiuh87.jpg" alt="Belts, Sheaves &amp; Pulleys" class="unique-img-responsive img-responsive">
+              <span>
+                BELTS, SHEAVES &amp; PULLEYS
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/chains-&amp;-sprockets">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/chain_spkt_mn_oujhdfg_9gjh7tgh.jpg" alt="Chains &amp; Sprockets" class="unique-img-responsive img-responsive">
+              <span>
+                CHAINS &amp; SPROCKETS
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/clutches-&amp;-brakes">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/clutch_brake_lsknfg_ujfd84.jpg" alt="Clutches &amp; Brakes" class="unique-img-responsive img-responsive">
+              <span>
+                CLUTCHES &amp; BRAKES
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="unique-row">
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/couplings">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/couplings_ubfg_97gerfg_fhsuyrbvf.jpg" alt="Couplings" class="unique-img-responsive img-responsive">
+              <span>
+                COUPLINGS
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/electric-motors">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/electricmotors_sdkujhg_surgf_85hg.jpg" alt="Electrical Drives &amp; Controls" class="unique-img-responsive img-responsive">
+              <span>
+                ELECTRICAL DRIVES &amp; CONTROLS
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/pneumatics">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/pneumatic_prod_mn_msdfujgb_97ghg.jpg" alt="Pneumatic &amp; Fluid Power" class="unique-img-responsive img-responsive">
+              <span>
+                PNEUMATIC &amp; FLUID POWER
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="unique-column">
+          <a href="https://www.tristate-bearing.com/c/seals,-gaskets-&amp;-packing">
+            <div class="product-container">
+              <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Categories/Seals_Gaskets_packing_sdiuybhgf_8rj.jpg" alt="Seals &amp; Retaining Rings" class="unique-img-responsive img-responsive">
+              <span>
+                SEALS &amp; RETAINING RINGS
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="unique-disp-page-wrap">
+        <a href="products">
+          See all Products
+        </a>
+      </div>
+      <!--/gm-editable-region-->
+    </div>
+  </div>
+</div>
+<div class="container gm-editing ui-sortable" style="position: relative; left: 0px; top: 0px;">
+  <div class="row">
+    <div class="column col-md-12 col-sm-12 col-xs-12">
+      <!--gm-editable-region-->
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <!--/gm-editable-region-->
+    </div>
+  </div>
+</div>
+<div class="container gm-editing ui-sortable custom-border" style="position: relative; left: 0px; top: 0px;">
+  <h2 class="unique-disp-page-title" style="text-align: center;">
+    FEATURED BRANDS
+  </h2>
+  <div class="carousel" id="brand-carousel" style="height: 300px;">
+    <button class="left-arrow" onclick="prevSlide('brand-carousel')">
+      ❮
+    </button>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/b/martin">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/martin_slider_98hghrg.png" alt="Martin" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/b/nachi">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/nachi_slider_kjdfg87.png" alt="Nachi" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/b/ntn">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/ntn_slider_kjhufg7re.png" alt="NTN" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/b/tsubaki">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/Tsubaki_slider_sdiuhg8s.png" alt="UST" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/b/baldor-reliance">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/baldor_slider_sdkjhbgf7.png" alt="Baldor" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: none;">
+      <a href="https://www.tristate-bearing.com/b/dodge">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/dodge_slider_sdjhg7.png" alt="Dodge" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: none;">
+      <a href="https://www.tristate-bearing.com/b/fag">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/fag_slider_sdjhg8.png" alt="FAG" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <div class="slide" style="display: none;">
+      <a href="https://www.tristate-bearing.com/b/ina">
+        <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/CMS/STATIC_IMAGES/INA_slider_dfjuhg8.png" alt="INA" class="img-responsive first-carousel-img">
+      </a>
+    </div>
+    <button class="right-arrow" onclick="nextSlide('brand-carousel')">
+      ❯
+    </button>
+  </div>
+</div>
+<div class="container gm-editing ui-sortable custom-border" style="position: relative; left: 0px; top: 0px; margin-top: 20px;">
+  <h2 class="unique-disp-page-title" style="text-align: center;">
+    FEATURED PRODUCTS
+  </h2>
+  <div class="carousel" id="product-carousel" style="height: 450px;">
+    <button class="left-arrow" onclick="prevSlide('product-carousel')">
+      ❮
+    </button>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/wd-40-490095-wdf10024">
+        <div class="product-info">
+          <img src="https://externalassets.unilogcorp.com/ASSETS/IMAGES/ITEMS/ORIGINAL_HIGHRES/WD_40_490095.jpg" alt="WD-40" class="img-responsive second-carousel-img">
+          <p>
+            <strong>
+              WD-40® 490095 
+            </strong>
+            WDF10024
+            <br>
+            <strong>
+              Manufacturer: 
+            </strong>
+            WD-40 Company
+            <br>
+            <strong>
+              Brand Name: 
+            </strong>
+            WD-40®
+            <br>
+            <strong>
+              Part Number: 
+            </strong>
+            WDF10024
+            <br>
+            <strong>
+              UPC: 
+            </strong>
+            079567490098
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/airmaster-71591-airca30">
+        <div class="product-info">
+          <img src="https://externalassets.unilogcorp.com/ASSETS/IMAGES/ITEMS/ORIGINAL_HIGHRES/Airmaster_71590.jpg" alt="Airmaster" class="img-responsive">
+          <p>
+            <strong>
+              AIRMASTER 71591 
+            </strong>
+            AIRCA30
+            <br>
+            <strong>
+              Manufacturer: 
+            </strong>
+            Airmaster Fan Co
+            <br>
+            <strong>
+              Brand Name: 
+            </strong>
+            Airmaster
+            <br>
+            <strong>
+              Part Number: 
+            </strong>
+            AIRCA30
+            <br>
+            <strong>
+              UPC: 
+            </strong>
+            783429715914
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/1453569/product/n/scrubs-dym42272">
+        <div class="product-info">
+          <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/ITEMS/DETAIL_PAGE/20240626_1016_1104_rf55[1].jpg" alt="Scrubs" class="img-responsive">
+          <p>
+            <strong>
+              SCRUBS 42272
+            </strong>
+            DYM42272
+            <br>
+            <strong>
+              Manufacturer: 
+            </strong>
+            ITW Pro Brands
+            <br>
+            <strong>
+              Brand Name: 
+            </strong>
+            Scrubs
+            <br>
+            <strong>
+              Part Number: 
+            </strong>
+            DYM42272
+            <br>
+            <strong>
+              UPC: 
+            </strong>
+            764769422724
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/timken-set2-900sa-timset2">
+        <div class="product-info">
+          <img src="https://externalassets.unilogcorp.com/ASSETS/IMAGES/ITEMS/ORIGINAL_HIGHRES/Timken_SET2_900SA.jpg" alt="Timken" class="img-responsive">
+          <p>
+            <strong>
+              TIMKEN® SET2-900SA
+            </strong>
+            TIMSET2
+            <br>
+            <strong>
+              Manufacturer: 
+            </strong>
+            Timken
+            <br>
+            <strong>
+              Brand Name: 
+            </strong>
+            Timken®
+            <br>
+            <strong>
+              Part Number: 
+            </strong>
+            TIMSET2
+            <br>
+            <strong>
+              UPC: 
+            </strong>
+            053893730110
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="slide" style="display: block;">
+      <a href="https://www.tristate-bearing.com/mystik-cit5484-14">
+        <div class="product-info">
+          <img src="https://www.tristate-bearing.com/ASSETS/IMAGES/ITEMS/DETAIL_PAGE/665006002080-M.png" alt="Mystik" class="img-responsive">
+          <p>
+            <strong>
+              MYSTIK CIT5484-14
+            </strong>
+            <br>
+            <strong>
+              Mystik JT-6 Multi-Purpose #2 Grease
+            </strong>
+            <br>
+            <strong>
+              Manufacturer: 
+            </strong>
+            CITGO
+            <br>
+            <strong>
+              Brand Name: 
+            </strong>
+            Mystik
+            <br>
+            <strong>
+              Part Number: 
+            </strong>
+            CIT5484-14
+          </p>
+        </div>
+      </a>
+    </div>
+    <button class="right-arrow" onclick="nextSlide('product-carousel')">
+      ❯
+    </button>
+  </div>
+</div>
+<script>
+  let currentSlideIndex = {
+  };
+  function initCarousel(id) {
+    const carousel = document.getElementById(id);
+    currentSlideIndex[id] = 0;
+    showSlides(id);
+  }
+  function showSlides(id) {
+    const slides = document.querySelectorAll(`#${id} .slide`);slides.forEach((slide, i) => {slide.style.display = i >= currentSlideIndex[id] && i < currentSlideIndex[id] + 5 ? 'block' : 'none';});}function nextSlide(id) {const slides = document.querySelectorAll(`#${id} .slide`);if (currentSlideIndex[id] + 5 < slides.length) {currentSlideIndex[id]++;} else {currentSlideIndex[id] = 0;}showSlides(id);}function prevSlide(id) {if (currentSlideIndex[id] > 0) {currentSlideIndex[id]--;} else {const slides = document.querySelectorAll(`#${id} .slide`);currentSlideIndex[id] = slides.length - 5;}showSlides(id);}document.addEventListener('DOMContentLoaded', () => {initCarousel('brand-carousel');initCarousel('product-carousel');});</script>
